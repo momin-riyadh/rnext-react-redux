@@ -20,7 +20,7 @@ function App() {
     const [counters, setCounters] = useState(initialCounters);
 
     const handleIncrement = (counterId) => {
-        counters.map(counter => {
+        const updatedCounters = counters.map(counter => {
             if (counter.id === counterId) {
                 return {
                     ...counter,
@@ -29,6 +29,7 @@ function App() {
             }
             return counter
         })
+        setCounters(updatedCounters)
     }
 
     const handleDecrement = (counterId) => {
@@ -54,7 +55,7 @@ function App() {
 
                 {
                     counters.map((counter) => (
-                        <Counter count-={counter.value}
+                        <Counter count={counter.value}
                                  key={counter.id}
                                  onIncrement={() => handleIncrement(counter.id)}
                                  onDecrement={() => handleDecrement(counter.id)}
