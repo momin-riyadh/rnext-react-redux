@@ -3,16 +3,6 @@ import Stats from "./components/Stats.jsx";
 import {useState} from "react";
 
 
-const initialCounters = [
-    {
-        id: crypto.randomUUID(),
-        value: 0
-    },
-    {
-        id: crypto.randomUUID(),
-        value: 0
-    }
-]
 
 
 function App() {
