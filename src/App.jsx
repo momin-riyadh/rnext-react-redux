@@ -1,8 +1,7 @@
 import Counter from "./components/Counter.jsx";
 import Stats from "./components/Stats.jsx";
 import {useState} from "react";
-import counter from "./components/Counter.jsx";
-import count from "./components/Count.jsx";
+
 
 const initialCounters = [
     {
@@ -44,7 +43,7 @@ function App() {
         })
         setCounters(updatedCounters)
     }
-
+    const totalCount = counters.reduce((sum, current) => sum + current.value, 0)
     return (
 
         <div className="w-screen h-screen p-10 bg-gray-100 text-slate-700">
@@ -64,7 +63,7 @@ function App() {
                     ))
                 }
 
-                <Stats totalCount={10}/>
+                <Stats totalCount={totalCount}/>
             </div>
 
         </div>
